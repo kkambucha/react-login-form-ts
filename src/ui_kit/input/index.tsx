@@ -6,7 +6,7 @@ interface InputProps {
     required: boolean;
     name: string;
     value: string;
-    onChange: (value: string) => void;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     errors?: Array<string>;
 }
 
@@ -24,7 +24,7 @@ const InputErrors: FC<InputErrorsProps> = ({ errors = [] }) => {
 }
 
 const Input: FC<InputProps> = ({ caption, type, required, name, value, onChange, errors = [] }) => {
-    const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)
+    const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => onChange(e)
     return (
         <div>
             <label htmlFor={name}>

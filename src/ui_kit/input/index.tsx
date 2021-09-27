@@ -18,7 +18,7 @@ const InputErrors: FC<InputErrorsProps> = ({ errors = [] }) => {
     if (!errors.length) return null
     return (
         <div>
-            {errors.map((error) => <div>{error}</div>)}
+            {errors.map((error) => <div key={error}>{error}</div>)}
         </div>
     )
 }
